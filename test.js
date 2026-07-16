@@ -16,3 +16,4 @@ console.log('Running tests...');
 assert.ok(process.env.DATABASE_URL, 'DATABASE_URL should be defined');
 assert.ok(process.env.API_KEY, 'API_KEY should be defined');
 console.log('Tests passed!');
+// E2E test 1784218567
