@@ -9,3 +9,4 @@ retry
 x
 octokit-fix
 await-fix
+fetch-client
