@@ -12,3 +12,4 @@ await-fix
 fetch-client
 debug
 final
+clean-test
