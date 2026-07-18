@@ -5,6 +5,7 @@
     "test": "node test.js"
   },
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "lodash": "latest"
   }
 }
