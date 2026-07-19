@@ -22,3 +22,4 @@ jobs:
           node -e "if (!process.env.API_KEY) { throw new Error('Required environment variable API_KEY is not set'); }"
         env:
           CI: true
+          API_KEY: ${{ secrets.API_KEY }}
