@@ -23,6 +23,7 @@ jobs:
         env:
           CI: true
 
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
   build:
     runs-on: ubuntu-latest
     steps:
@@ -38,3 +39,6 @@ jobs:
 
       - name: Run tests
         run: node --max-old-space-size=50 test.js --ci
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+
