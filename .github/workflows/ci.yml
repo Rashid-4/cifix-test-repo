@@ -7,6 +7,22 @@ on:
     branches: [main]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check env
+        run: |
+          node -e "if (!process.env.DEPLOY_TOKEN) { throw new Error('Required environment variable DEPLOY_TOKEN is not set'); }"
+        env:
+          CI: true
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -22,5 +38,3 @@ jobs:
 
       - name: Run tests
         run: node --max-old-space-size=50 test.js --ci
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
