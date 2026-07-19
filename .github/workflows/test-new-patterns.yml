@@ -5,23 +5,14 @@ on:
     branches: [main]
 
 jobs:
-  node-advanced-test:
+  rust-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Simulate Prisma engine failure
+      - name: Build Rust project
         run: |
-          echo "Generating Prisma Client..."
-          echo "prisma:warn We could not find your Prisma schema"
-          echo "PrismaClientInitializationError: Unable to require libquery_engine-debian-openssl-3.0.x.so.node"
-          echo "Prisma has detected that this project was built on a different platform"
+          echo "Compiling project..."
+          echo "error: linker \`cc\` not found"
+          echo "note: the linker is needed to link your binary"
           exit 1
