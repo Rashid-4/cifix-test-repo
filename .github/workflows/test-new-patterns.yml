@@ -15,6 +15,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Simulate Prisma engine failure
         run: |
           echo "Generating Prisma Client..."
