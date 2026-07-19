@@ -38,3 +38,6 @@ jobs:
 
       - name: Run tests
         run: node --max-old-space-size=50 test.js --ci
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+
