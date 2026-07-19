@@ -8,6 +8,8 @@ jobs:
   node-advanced-test:
     runs-on: ubuntu-latest
     steps:
+      - name: Generate Prisma Client
+        run: npx prisma generate
       - uses: actions/checkout@v4
 
       - name: Setup Node
