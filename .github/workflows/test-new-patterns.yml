@@ -1,0 +1,24 @@
+name: Test New Patterns
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  node-advanced-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Simulate Prisma engine failure
+        run: |
+          echo "Generating Prisma Client..."
+          echo "prisma:warn We could not find your Prisma schema"
+          echo "PrismaClientInitializationError: Unable to require libquery_engine-debian-openssl-3.0.x.so.node"
+          echo "Prisma has detected that this project was built on a different platform"
+          exit 1
