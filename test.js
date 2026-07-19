@@ -13,4 +13,4 @@ app.get('/', (req, res) => res.send(lodash.capitalize('hello')));
 
 console.log('App initialized');
 console.log('Tests passed!');
-// verify-prod-v4-fix
+// final-e2e-test
