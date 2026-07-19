@@ -2,7 +2,8 @@
   "name": "cifix-test-repo",
   "version": "1.0.0",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "ci:build": "NODE_OPTIONS=--max-old-space-size=4096 npm run build"
   },
   "dependencies": {
     "express": "latest",
